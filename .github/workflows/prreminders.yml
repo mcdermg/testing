@@ -1,0 +1,24 @@
+name: PRs reviews reminder
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Run Manually'
+        required: false
+  schedule:
+    # Every weekday every 2 hours during working hours, send notification
+    - cron: "0 8-17/2 * * 1-5"
+
+jobs:
+  pr-reviews-reminder:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: davideviolante/pr-reviews-reminder-action@v1.3.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        webhook-url: 'https://hooks.slack.com/services/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' # Required
+        provider: 'slack' # Required (slack or msteams)
+        channel: 'githubactions_notifications' # Optional, eg: #general
+        github-provider-map: 'mcdermg:testing,Celestial-Industries/terraform-example-repo, Celestial-Industries:actions_testing' # Optional, eg: "DavideViolante:UEABCDEFG,foobar:UAABCDEFG"
