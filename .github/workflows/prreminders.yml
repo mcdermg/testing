@@ -18,7 +18,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        webhook-url: 'https://hooks.slack.com/services/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' # Required
+        webhook-url: 'https://hooks.slack.com/services/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' # Required
         provider: 'slack' # Required (slack or msteams)
         channel: 'githubactions_notifications' # Optional, eg: #general
         github-provider-map: 'mcdermg:testing,Celestial-Industries/terraform-example-repo, Celestial-Industries:actions_testing' # Optional, eg: "DavideViolante:UEABCDEFG,foobar:UAABCDEFG"
