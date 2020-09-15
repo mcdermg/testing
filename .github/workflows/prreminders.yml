@@ -21,4 +21,4 @@ jobs:
         webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }} # Required
         provider: 'slack' # Required (slack or msteams)
         channel: '#githubactions_notifications' # Optional, eg: #general
-        github-provider-map: 'mcdermg:testing,Celestial-Industries/terraform-example-repo, Celestial-Industries:actions_testing' # Optional, eg: "DavideViolante:UEABCDEFG,foobar:UAABCDEFG"
+        github-provider-map: 'mcdermg:testing,Celestial-Industries:terraform-example-repo, Celestial-Industries:actions_testing' # Optional, eg: "DavideViolante:UEABCDEFG,foobar:UAABCDEFG"
